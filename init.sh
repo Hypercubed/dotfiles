@@ -1,10 +1,8 @@
 echo 'Dotfiles - Jayson Harshbarger "Hypercubed"'
 
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
-
-echo "Usage: $(basename "$0")"
-exit
-
+	echo "Usage: $(basename "$0")"
+	exit
 fi
 
 # Initialize.
@@ -18,6 +16,28 @@ fi
 #  git pull
 #fi
 
-echo "Linking ~/.bash files";
-ln -sf  "${HOME}/.dotfiles/.bashrc" "${HOME}/.bashrc";
-ln -sf  "${HOME}/.dotfiles/.bash_profile" "${HOME}/.bash_profile";
+DOTFILES_ROOT=~/.dotfiles
+
+link_files () {
+  ln -sf $1 $2
+  #ln -s $1 $2
+  echo "linked $1 to $2"
+}
+
+install_dotfiles () {
+  echo 'linking dotfiles'
+
+  for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
+  do
+    dest="$HOME/.`basename \"${source%.*}\"`"
+
+	echo ''	
+    link_files $source $dest
+
+  done
+}
+
+install_dotfiles
+
+echo ''
+echo '  All installed!'
