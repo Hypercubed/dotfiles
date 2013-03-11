@@ -19,7 +19,7 @@ fi
 #  git pull
 #fi
 
-DOTFILES_ROOT=~/.dotfiles
+DOTFILES_ROOT=~/dotfiles
 
 link_files () {
   ln -sf $1 $2

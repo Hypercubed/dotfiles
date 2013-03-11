@@ -10,8 +10,8 @@ Run this:
 
 ```sh
 cd ~
-git clone https://github.com/Hypercubed/.dotfiles.git ~/.dotfiles
-./.dotfiles/bin/init.sh
+git clone https://github.com/Hypercubed/dotfiles.git ~/.dotfiles
+./dotfiles/bin/init.sh
 ```
 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
