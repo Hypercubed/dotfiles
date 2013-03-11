@@ -15,7 +15,7 @@ git clone https://github.com/Hypercubed/dotfiles.git ~/dotfiles
 ```
 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
-Everything is configured and tweaked within `~/.dotfiles`.
+Everything is configured and tweaked within `~/dotfiles`.
 
 ## Inspiration
 
