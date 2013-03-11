@@ -1,0 +1,1 @@
+cp ConEmu.xml /cygdrive/c/Program\ Files/ConEmu/ConEmu
