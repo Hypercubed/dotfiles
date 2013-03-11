@@ -1,3 +1,6 @@
+# Hypercubed .dotfiles init
+# Based on https://github.com/holman/dotfiles/
+
 echo 'Dotfiles - Jayson Harshbarger "Hypercubed"'
 
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
