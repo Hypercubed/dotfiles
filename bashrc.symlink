@@ -190,13 +190,15 @@ alias ll='ls -l'                              # long list
 # alias cd=cd_func
 #
 
-# Prompt
-source ~/dotfiles/bin/prompt.sh
+export DOTFILES=~/dotfiles
+export PF=`cygpath "$PROGRAMFILES"`
 
 # Tools
-export PF=`cygpath "$PROGRAMFILES"`
-export EDITOR="${PF}/Notepad++/notepad++.exe"
-alias np=~/dotfiles/bin/np.sh
+source $DOTFILES/ConEmu/aliases.sh
+source $DOTFILES/npp/aliases.sh
+source $DOTFILES/bin/prompt.sh
+
+# Others
 function wm { "${PF}/WinMerge/WinMergeU.exe" $@ & }
 function exp { 
   if [ -z "$1" ]

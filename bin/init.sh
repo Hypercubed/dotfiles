@@ -33,14 +33,16 @@ install_dotfiles () {
   for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
   do
     dest="$HOME/.`basename \"${source%.*}\"`"
-
-	echo ''	
-    link_files $source $dest
+	
+  link_files $source $dest
 
   done
 }
 
 install_dotfiles
+
+source $DOTFILES_ROOT/ConEmu/init.sh
+echo "setup ConEmu"
 
 echo ''
 echo '  All installed!'
