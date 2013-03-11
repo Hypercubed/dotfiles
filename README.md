@@ -10,7 +10,7 @@ Run this:
 
 ```sh
 cd ~
-git clone https://github.com/Hypercubed/dotfiles.git ~/.dotfiles
+git clone https://github.com/Hypercubed/dotfiles.git ~/dotfiles
 ./dotfiles/bin/init.sh
 ```
 
