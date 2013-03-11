@@ -99,8 +99,8 @@
 # alias fgrep='fgrep --color=auto'              # show differences in colour
 #
 # Some shortcuts for different directory listings
-# alias ls='ls -hF --color=tty'                 # classify files in colour
-# alias dir='ls --color=auto --format=vertical'
+alias ls='ls -hF --color=tty'                 # classify files in colour
+alias dir='ls --color=auto --format=vertical'
 # alias vdir='ls --color=auto --format=long'
 alias ll='ls -l'                              # long list
 # alias la='ls -A'                              # all but . and ..
@@ -189,7 +189,19 @@ alias ll='ls -l'                              # long list
 # 
 # alias cd=cd_func
 #
-# Notepad
-export EDITOR="/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
-alias np="/cygdrive/c/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"
-#cd -
+
+# Prompt
+source ~/.dotfiles/prompt.sh
+
+# Tools
+export PF=`cygpath "$PROGRAMFILES"`
+export EDITOR="${PF}/Notepad++/notepad++.exe"
+function np { "$EDITOR" $@ & }
+function wm { "${PF}/WinMerge/WinMergeU.exe" $@ & }
+function exp { 
+  if [ -z "$1" ]
+  then 
+    set -- $PWD
+  fi;
+  `cygpath "$SYSTEMROOT"`/explorer.exe /e,`cygpath -w "$1"`
+}
