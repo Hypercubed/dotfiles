@@ -196,7 +196,7 @@ source ~/.dotfiles/prompt.sh
 # Tools
 export PF=`cygpath "$PROGRAMFILES"`
 export EDITOR="${PF}/Notepad++/notepad++.exe"
-function np { "$EDITOR" $@ & }
+alias np=~/.dotfiles/np.sh
 function wm { "${PF}/WinMerge/WinMergeU.exe" $@ & }
 function exp { 
   if [ -z "$1" ]
