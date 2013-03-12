@@ -1,6 +1,8 @@
 export PF=`cygpath "$PROGRAMFILES"`
 export EDITOR="${PF}/Notepad++/notepad++.exe"
 
+alias github='github &'
+
 function np() {
   exec "$EDITOR" "$1" &
 }

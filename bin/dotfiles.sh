@@ -104,6 +104,11 @@ function do_stuff() {
   done
 }
 
+e_header "Updating dotfiles"
+cd $DOTFILES_ROOT
+git pull
+cd - > /dev/null
+
 # Tweak file globbing.
 shopt -s dotglob
 shopt -s nullglob
