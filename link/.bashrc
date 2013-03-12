@@ -198,7 +198,6 @@ source $DOTFILES/ConEmu/aliases.sh
 source $DOTFILES/npp/aliases.sh
 source $DOTFILES/bin/prompt.sh
 
-# Others
 function wm { "${PF}/WinMerge/WinMergeU.exe" $@ & }
 function exp { 
   if [ -z "$1" ]
