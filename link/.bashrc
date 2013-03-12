@@ -193,10 +193,27 @@ alias ll='ls -l'                              # long list
 export DOTFILES=~/dotfiles
 export PF=`cygpath "$PROGRAMFILES"`
 
-# Tools
-source $DOTFILES/ConEmu/aliases.sh
-source $DOTFILES/npp/aliases.sh
-source $DOTFILES/bin/prompt.sh
+PATH=$DOTFILES/bin:$PATH
+export PATH
+
+# Source all files in ~/dotfiles/source/
+function src() {
+  local file
+  if [[ "$1" ]]; then
+    source "$DOTFILES/source/$1.sh"
+  else
+    for file in $DOTFILES/source/*; do
+      source "$file"
+    done
+  fi
+}
+
+# Run dotfiles script, then source.
+function dotfiles() {
+  $DOTFILES/bin/dotfiles.sh "$@" && src
+}
+
+src
 
 function wm { "${PF}/WinMerge/WinMergeU.exe" $@ & }
 function exp { 
