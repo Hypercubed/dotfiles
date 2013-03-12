@@ -1,20 +1,33 @@
 export PF=`cygpath "$PROGRAMFILES"`
 export EDITOR="${PF}/Notepad++/notepad++.exe"
 
+WINMERGE="${PF}/WinMerge/WinMergeU.exe"
+EXPLORER=`cygpath -W`/explorer.exe
+
 alias github='github &'
+alias winpath='cygpath -w'
+alias open='cygstart'
 
 function np() {
-  exec "$EDITOR" "$1" &
+	if [ "$1" == "" ] ; then
+		cygstart "$EDITOR"
+	else
+		cygstart "$EDITOR" `winpath "$1"`
+	fi
 }
 
 function wm { 
-  exec "${PF}/WinMerge/WinMergeU.exe" $@ & 
+	if [ "$1" == "" ] ; then
+		cygstart "$WINMERGE"
+	else
+		cygstart "$WINMERGE" `winpath "$2"` `winpath "$2"` 
+	fi
 }
 
 function exp { 
-  if [ -z "$1" ]
-  then 
-    set -- $PWD
+  if [ "$1" == "" ] ; then 
+	cygstart "$EXPLORER" /e,`winpath .`
+  else
+    cygstart "$EXPLORER" /e,`winpath "$1"`
   fi;
-  exec `cygpath "$SYSTEMROOT"`/explorer.exe /e,`cygpath -w "$1"`
 }
