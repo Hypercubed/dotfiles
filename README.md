@@ -4,19 +4,12 @@
 
 Your dotfiles are how you personalize your system. These are mine.
 
-## Install
+## Installation
 
-Run this:
-
-```sh
-cd ~
-git clone https://github.com/Hypercubed/dotfiles.git ~/dotfiles
-./dotfiles/bin/init.sh
+``` sh
+FRESH_LOCAL_SOURCE=Hypercubed/dotfiles bash -c "`curl -sL get.freshshell.com`"
 ```
 
-This will symlink the appropriate files in `.dotfiles` to your home directory.
-Everything is configured and tweaked within `~/dotfiles`.
+My dotfiles are managed by [fresh].
 
-## Inspiration
-
-Based on (not forked from) https://github.com/holman/dotfiles/ and https://github.com/cowboy/dotfiles.
+[fresh]: http://freshshell.com

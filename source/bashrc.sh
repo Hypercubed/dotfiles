@@ -1,18 +1,3 @@
-# base-files version 4.0-4
-# ~/.bashrc: executed by bash(1) for interactive shells.
-
-# The latest version as installed by the Cygwin Setup program can
-# always be found at /etc/defaults/etc/skel/.bashrc
-
-# Modifying /etc/skel/.bashrc directly will prevent
-# setup from updating it.
-
-# The copy in your home directory (~/.bashrc) is yours, please
-# feel free to customise it to create a shell
-# environment to your liking.  If you feel a change
-# would be benificial to all, please feel free to send
-# a patch to the cygwin mailing list.
-
 # User dependent .bashrc file
 
 # If not running interactively, don't do anything
@@ -190,30 +175,7 @@ alias ll='ls -l'                              # long list
 # alias cd=cd_func
 #
 
-export DOTFILES=~/dotfiles
-export PF=`cygpath "$PROGRAMFILES"`
-
-PATH=$DOTFILES/bin:$PATH
-export PATH
-
-# Source all files in ~/dotfiles/source/
-function src() {
-  local file
-  if [[ "$1" ]]; then
-    source "$DOTFILES/source/$1.sh"
-  else
-    for file in $DOTFILES/source/*; do
-      source "$file"
-    done
-  fi
-}
-
-# Run dotfiles script, then source.
-function dotfiles() {
-  $DOTFILES/bin/dotfiles.sh "$@" && src
-}
-
-src
-
 # Otherstuff
 export DISPLAY=127.0.0.1:0.0
+
+#alias fresh=~/.fresh/source/freshshell/fresh/bin/fresh
