@@ -1,2 +1,2 @@
 export CONEMU=`cygpath "$ConEmuDir"`
-alias con=$DOTFILES/bin/conemu.bat
+#alias con=$DOTFILES/bin/conemu.bat

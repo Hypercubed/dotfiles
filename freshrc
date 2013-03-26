@@ -8,7 +8,7 @@
 #
 # See http://freshshell.com/readme for documentation.
 
-#fresh freshshell/fresh bin/fresh --bin
+fresh freshshell/fresh bin/fresh --bin
 
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile
 fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
@@ -20,3 +20,5 @@ fresh bin/\* --bin
 fresh freshshell/fresh contrib/completion/fresh-completion.bash
 
 
+fresh twe4ked/dotfiles bin/gh --bin
+fresh twe4ked/dotfiles bin/add-keys --bin

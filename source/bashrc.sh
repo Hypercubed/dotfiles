@@ -177,5 +177,6 @@ alias ll='ls -l'                              # long list
 
 # Otherstuff
 export DISPLAY=127.0.0.1:0.0
+export PYTHON=`which python`
 
 #alias fresh=~/.fresh/source/freshshell/fresh/bin/fresh
