@@ -179,4 +179,7 @@ alias ll='ls -l'                              # long list
 export DISPLAY=127.0.0.1:0.0
 export PYTHON=`which python`
 
+#ln -sf ~/../workspace workspace
+#ln -sf ~/../Scratch scratch
+
 #alias fresh=~/.fresh/source/freshshell/fresh/bin/fresh
