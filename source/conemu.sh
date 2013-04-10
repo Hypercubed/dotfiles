@@ -1,28 +1,41 @@
 export CONEMUC="${CONEMU:=`cygpath "$ConEmuDir"`}/CONEMU/ConEmuC.exe"
+SHELL=bash
 
-alias con='newtab cygwin'
-
-function conemu() {
-	echo $1
+function intab() {
 	if [ "$1" == "" ] ; then
-		conemu "-new_console:t:Cygwin"
+		intab "bash" "bash"
 	else
-		"$CONEMUC" /c bash "$1"
+		"$CONEMUC" /c "$1"  "-new_console:t:$2"
+	fi
+}
+
+function cmdtab() {
+	if [ "$1" == "" ] ; then
+		intab cmd "Cmd"
+	else
+		intab cmd $1
 	fi
 }
 
 function newtab() {
 	if [ "$1" == "" ] ; then
-		conemu
+		intab
 	else
-		conemu "-new_console:t:$1"
+		intab "bash" $1
 	fi
 }
 
-function split() {
+alias bashtab='newtab'
+
+function splittab() {
 	if [ "$1" == "" ] ; then
-		conemu "-new_console:sV"
+		splittab Cygwin
 	else
-		conemu "-new_console:sV:t:$1"
+		"$CONEMUC" /c "$SHELL"  "-new_console:sV:t:$1"
 	fi
+}
+
+# Set the terminal's title.
+title () {
+	echo -ne '\033]0;'"$@"'\a';
 }

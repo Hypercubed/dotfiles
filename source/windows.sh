@@ -20,6 +20,14 @@ function exp {
   if [ "$1" == "" ] ; then 
 	cygstart "$EXPLORER" /e,`winpath .`
   else
-    cygstart "$EXPLORER" /e,`winpath "$1"`
+    cygstart "$EXPLORER" /e,`winpath "$@"`
   fi;
+}
+
+function trash { 
+	mv $@ ~/.trash/
+}
+
+function scratch { 
+	mv $@ ~/scratch/
 }
