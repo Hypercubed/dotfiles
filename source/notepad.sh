@@ -1,7 +1,7 @@
 export NP="${PF:=`cygpath "$PROGRAMFILES"`}/Notepad++/notepad++.exe"
 export EDITOR="editor"
 
-git config --global core.editor "$NP -multiInst -notabbar -nosession -noPlugin "
+git config --global core.editor "'$NP' -multiInst -nosession -noPlugin"
 
 function np() {
 	if [ "$1" == "" ] ; then
