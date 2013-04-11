@@ -94,10 +94,9 @@ function unidecode() {
 
 function dotfiles {
 	cd ~
-	fresh
-	type -P "fresh"
+	`type -P "fresh"`
 	source ~/.bashrc && echo $'Your dot files are now \033[1;32msourced\033[0m.'
-	cd -
+	cd - > /dev/null
 }
 
 # Print a line of dashes or the given string across the entire screen.

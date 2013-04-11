@@ -34,8 +34,3 @@ function splittab() {
 		"$CONEMUC" /c "$SHELL"  "-new_console:sV:t:$1"
 	fi
 }
-
-# Set the terminal's title.
-title () {
-	echo -ne '\033]0;'"$@"'\a';
-}

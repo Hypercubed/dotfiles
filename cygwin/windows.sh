@@ -8,13 +8,15 @@ alias github='github &'
 alias winpath='cygpath -w'
 alias open='cygstart'
 
-function wm { 
+function winmerge { 
 	if [ "$1" == "" ] ; then
 		cygstart "$WINMERGE"
 	else
 		cygstart "$WINMERGE" `winpath "$2"` `winpath "$2"` 
 	fi
 }
+
+alias wm=winmerge
 
 function exp { 
   if [ "$1" == "" ] ; then 
