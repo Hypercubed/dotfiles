@@ -1,4 +1,4 @@
-# Custom DJRavine Modification
+# Custom Log in screen
 
 login_pwd=`pwd`;
 login_date=`date`;
