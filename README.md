@@ -14,4 +14,4 @@ My dotfiles are managed by [fresh].
 FRESH_LOCAL_SOURCE=Hypercubed/dotfiles bash -c "`curl -sL get.freshshell.com`"
 ```
 
-And you shall have 海!
+And you shall see 海!
