@@ -17,10 +17,10 @@ open_blue_escape="\033[34m"
 open_green_escape="\033[32m"
 close_escape="^\033[0m"
 
-echo -e " "
+function kai() {
 echo -e "${open_blue_escape}+----------------------------------------------------------------------"
 echo -e "${open_blue_escape}| "
-echo -e "${open_blue_escape}| ${open_green_escape}:==:~~=~~=~=~~~~:~~~,.,,....,,,:7,::,:I777777777  77 7777I7777I777777=~=~::~=~~~~~================="
+echo -e "${open_blue_escape}| ${open_green_escape}:==:~~=~~=~=~~~~:~~~,.,,....,,,:7,::,:I777777777  77 7777I7777I777777=~=~::~=~~~~~=================="
 echo -e "${open_blue_escape}| ${open_green_escape}::~=:~~~~~====~~~~:~~...,,,,,,,,,7?:7I+:~I777       777~,~~.......,=77?~=~::~=~~~~~====~============"
 echo -e "${open_blue_escape}| ${open_green_escape}::~~:~~~~~~==~=~:~:~~.,,,,,,,,::=:7=77~~::=77777  777,...............,..~~~:~=~~~~~================="
 echo -e "${open_blue_escape}| ${open_green_escape}:,=~:~~~~~===~=~~~:=~,,,,,,,,,,,:~7777777I7777  77I,......................,~~=~~~~~================="
@@ -60,6 +60,10 @@ echo -e "${open_blue_escape}| ${open_green_escape}===================:==:~:~7~77
 echo -e "${open_blue_escape}| ${open_green_escape}================+==:==~=~~:77I::+77=~~,::::+~:?,,:?????+++++??+?+?++++++++++===+++++=====+++==+=+==+"
 echo -e "${open_blue_escape}|"
 echo -e "${open_blue_escape}+----------------------------------------------------------------------"
+}
+
+echo -e " "
+kai
 #echo -e "${open_blue_escape}| ${open_green_escape}Server IP: ${open_red_escape}"$server_ip
 echo -e "${open_blue_escape}| ${open_green_escape}Date: ${open_red_escape}"$login_date
 #echo -e "${open_blue_escape}| ${open_green_escape}Users: ${open_red_escape}"$login_users

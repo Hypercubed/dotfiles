@@ -7,6 +7,9 @@ settitle ()
 { 
 	echo -ne "\e]2;$@\a\e]1;$@\a"; 
 }
+
+settitle $OSTYPE
+
 # 
 # b) function cd_func
 # This function defines a 'cd' replacement function capable of keeping, 
