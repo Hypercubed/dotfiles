@@ -15,7 +15,7 @@ disk_size_mb=$(echo "scale=2; $disk_size/(1024^2)" | bc)
 open_red_escape="\033[31m"
 open_blue_escape="\033[34m"
 open_green_escape="\033[32m"
-close_escape="^\033[0m"
+close_escape="\033[0m"
 
 function kai() {
 echo -e "${open_blue_escape}+----------------------------------------------------------------------"
@@ -76,4 +76,4 @@ echo -e "${open_blue_escape}| ${open_green_escape}Total Disk Space: ${open_red_e
 echo -e "${open_blue_escape}| ${open_green_escape}Total Free Space: ${open_red_escape}${disk_available_mb} GB"
 echo -e "${open_blue_escape}| ${open_green_escape}Total Used Space: ${open_red_escape}${disk_used_mb} GB"
 echo -e "${open_blue_escape}+----------------------------------------------------------------------"
-echo -e " "
+echo -e "${close_escape}"
