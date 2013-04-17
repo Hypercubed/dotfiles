@@ -96,7 +96,8 @@ function unidecode() {
 }
 
 function dotfiles {
-	cd ~
+	cd ~/.dotfiles/
+	git pull
 	`type -P "fresh"`
 	source ~/.bashrc && echo $'Your dot files are now \033[1;32msourced\033[0m.'
 	cd - > /dev/null

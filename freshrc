@@ -10,11 +10,12 @@
 
 fresh freshshell/fresh bin/fresh --bin
 
-fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile
-fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
+fresh bashrc --file=~/.bash_profile
+fresh bashrc --file=~/.bashrc
+fresh freshrc --file=~/.freshrc
 
-fresh $OSTYPE/\*
-fresh shared/\*
+#fresh $OSTYPE/\*
+#fresh shared/\*
 #fresh link/\* --file
 #fresh bin/\* --bin
 
