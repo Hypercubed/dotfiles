@@ -95,13 +95,18 @@ function unidecode() {
 	fi
 }
 
-function dotfiles {
-	cd ~/.dotfiles/
-	git pull
-	`type -P "fresh"`
-	source ~/.bashrc && echo $'Your dot files are now \033[1;32msourced\033[0m.'
-	cd - > /dev/null
+function reload() {
+  . ~/.bashrc && echo $'Your dot files are now \033[1;32msourced\033[0m.'
 }
+
+function refresh() {
+  cd ~/.dotfiles/
+  git pull
+  `type -P "fresh"`
+  cd - > /dev/null
+}
+
+alias dotfiles="refresh && reload"
 
 # Print a line of dashes or the given string across the entire screen.
 function line {
