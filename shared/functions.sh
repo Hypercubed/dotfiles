@@ -100,10 +100,7 @@ function reload() {
 }
 
 function refresh() {
-  cd ~/.dotfiles/
-  git pull
-  `type -P "fresh"`
-  cd - > /dev/null
+  `type -P "fresh"` update
 }
 
 alias dotfiles="refresh && reload"

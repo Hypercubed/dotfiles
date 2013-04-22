@@ -18,8 +18,9 @@ FRESH_LOCAL_SOURCE=Hypercubed/dotfiles bash -c "`curl -sL get.freshshell.com`"
 Install using bootstrap:
 
 ``` sh
+cd ~
 git clone https://github.com/Hypercubed/dotfiles.git .dotfiles
-. .dotfiles/bootstrap.sh
+. ~/.dotfiles/bootstrap.sh
 ```
 
 And you shall see 海!
