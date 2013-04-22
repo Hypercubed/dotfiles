@@ -9,8 +9,11 @@
 #      . /etc/bashrc   # --> Read /etc/bashrc, if present.
 #fi
 
-for f in ~/.dotfiles/shared/*; do source "$f"; done
-for f in ~/.dotfiles/$OSTYPE/*; do source "$f"; done
+#export PATH="$HOME/bin:$PATH"
+
+for file in ~/.dotfiles/{shared,$OSTYPE}/*; do
+	[ -r "$file" ] && . "$file"
+done
 
 if [ -e ~/.fresh/build/shell.sh ]
 then

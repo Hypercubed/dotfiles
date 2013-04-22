@@ -8,7 +8,7 @@ settitle ()
 	echo -ne "\e]2;$@\a\e]1;$@\a"; 
 }
 
-settitle $OSTYPE
+#settitle $OSTYPE
 
 # 
 # b) function cd_func
