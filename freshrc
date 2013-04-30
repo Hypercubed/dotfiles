@@ -14,6 +14,7 @@ fresh freshshell/fresh bin/fresh --bin
 #fresh bashrc --file=~/.bashrc
 #fresh freshrc --file=~/.freshrc
 
+
 #fresh $OSTYPE/\*
 #fresh shared/\*
 #fresh link/\* --file
@@ -26,6 +27,7 @@ fresh twe4ked/dotfiles bin/add-keys --bin
 
 fresh defunkt/repl bin/repl --bin
 
+fresh liquidpromptrc --file=~/.liquidpromptrc
 fresh nojhan/liquidprompt liquidprompt
 
 fresh revans/bash-it lib/\*
