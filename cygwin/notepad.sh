@@ -1,13 +1,23 @@
 export NP="${PF:=`cygpath "$PROGRAMFILES"`}/Notepad++/notepad++.exe"
-export EDITOR="editor"
+export SUPL="${PF:=`cygpath "$PROGRAMFILES"`}/Sublime Text 2/sublime_text.exe"
+export VISUAL=`cygpath -w "$SUPL"`
+export EDITOR="$NP"
 
-git config --global core.editor "'$NP' -multiInst -nosession -noPlugin"
+git config --global --replace-all core.editor "vim"
 
 function np() {
 	if [ "$1" == "" ] ; then
-		cygstart "$NP"
+		cygstart "$SUPL"
 	else
-		cygstart "$NP" `winpath "$1"`
+		cygstart "$SUPL" `winpath "$1"`
+	fi
+}
+
+function supl() {
+	if [ "$1" == "" ] ; then
+		cygstart "$SUPL"
+	else
+		cygstart "$SUPL" `winpath "$1"`
 	fi
 }
 
