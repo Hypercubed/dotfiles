@@ -3,11 +3,11 @@ cd ~/.dotfiles/
 git pull
 
 function doIt() {
-	ln -s ~/.dotfiles/bashrc ~/.bash_profile
-	ln -s ~/.dotfiles/bashrc ~/.bashrc
-	ln -s ~/.dotfiles/freshrc ~/.freshrc
-	ln -s ~/.dotfiles/liquidpromtrc ~/.liquidpromtrc
-	ln -s ~/.dotfiles/vimrc ~/.vimrc
+	ln -sf ~/.dotfiles/bashrc ~/.bash_profile
+	ln -sf ~/.dotfiles/bashrc ~/.bashrc
+	ln -sf ~/.dotfiles/freshrc ~/.freshrc
+	ln -sf ~/.dotfiles/liquidpromtrc ~/.liquidpromtrc
+	ln -sf ~/.dotfiles/vimrc ~/.vimrc
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
