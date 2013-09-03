@@ -1,17 +1,8 @@
-export NP="${PF:=`cygpath "$PROGRAMFILES"`}/Notepad++/notepad++.exe"
-export SUBL="${PF:=`cygpath "$PROGRAMFILES"`}/Sublime Text 3/sublime_text.exe"
-export VISUAL=`cygpath -w "$SUBL"`
-export EDITOR="$NP"
+export SUBL="/cygdrive/c/Program Files/Sublime Text 3/sublime_text.exe"
+export VISUAL="subl"
+export EDITOR="vim"
 
-git config --global --replace-all core.editor "vim"
-
-function np() {
-	if [ "$1" == "" ] ; then
-		cygstart "$SUBL"
-	else
-		cygstart "$SUBL" `winpath $@`
-	fi
-}
+git config --global --replace-all core.editor $EDITOR
 
 function subl() {
 	if [ "$1" == "" ] ; then
@@ -21,13 +12,15 @@ function subl() {
 	fi
 }
 
+alias np=subl
+
 function editor() {
 case "$1" in
 	*_EDITMSG|*MERGE_MSG|*_TAGMSG )
-		vim "$1"
+		$EDITOR $@
 		;;
 	* )
-		np "$1"
+		supl $@
 		;;
 esac
 }

@@ -1,6 +1,5 @@
 #!/bin/bash
-cd "$(dirname "${BASH_SOURCE}")"
-
+cd ~/.dotfiles/
 git pull
 
 function doIt() {
@@ -8,6 +7,7 @@ function doIt() {
 	ln -s ~/.dotfiles/bashrc ~/.bashrc
 	ln -s ~/.dotfiles/freshrc ~/.freshrc
 	ln -s ~/.dotfiles/liquidpromtrc ~/.liquidpromtrc
+	ln -s ~/.dotfiles/vimrc ~/.vimrc
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

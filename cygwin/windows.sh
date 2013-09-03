@@ -5,14 +5,14 @@ WINMERGE="${PF}/WinMerge/WinMergeU.exe"
 EXPLORER=`cygpath -W`/explorer.exe
 
 alias github='github &'
-alias winpath='cygpath -w'
+alias winpath='cygpath -w --'
 alias open='cygstart'
 
 function winmerge { 
 	if [ "$1" == "" ] ; then
 		cygstart "$WINMERGE"
 	else
-		cygstart "$WINMERGE" `winpath "$2"` `winpath "$2"` 
+		cygstart "$WINMERGE" `winpath $@` 
 	fi
 }
 
@@ -22,7 +22,7 @@ function exp {
   if [ "$1" == "" ] ; then 
 	cygstart "$EXPLORER" /e,`winpath .`
   else
-    cygstart "$EXPLORER" /e,`winpath "$@"`
+    cygstart "$EXPLORER" /e,`winpath $@`
   fi;
 }
 
