@@ -1,4 +1,5 @@
 export SUBL="/cygdrive/c/Program Files/Sublime Text 3/sublime_text.exe"
+export MDP=`cygpath "C:\Program Files (x86)\MarkdownPad 2\MarkdownPad2.exe"`
 export VISUAL="subl"
 export EDITOR="vim"
 
@@ -13,6 +14,14 @@ function subl() {
 }
 
 alias np=subl
+
+function md() {
+  if [ "$1" == "" ] ; then
+    cygstart "$MDP"
+  else
+    cygstart "$MDP" `winpath $@`
+  fi
+}
 
 function editor() {
 case "$1" in
