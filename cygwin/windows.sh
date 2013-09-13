@@ -3,6 +3,7 @@ export PF=`cygpath "$PROGRAMFILES"`
 
 WINMERGE="${PF}/WinMerge/WinMergeU.exe"
 EXPLORER=`cygpath -W`/explorer.exe
+CYGWIN="${CYGWIN} nodosfilewarning"
 
 alias github='github &'
 alias winpath='cygpath -w --'

@@ -1,5 +1,5 @@
 export SUBL="/cygdrive/c/Program Files/Sublime Text 3/sublime_text.exe"
-export MDP=`cygpath "C:\Program Files (x86)\MarkdownPad 2\MarkdownPad2.exe"`
+export MDP=`cygpath "${PROGRAMFILES}\MarkdownPad 2\MarkdownPad2.exe"`
 export VISUAL="subl"
 export EDITOR="vim"
 
