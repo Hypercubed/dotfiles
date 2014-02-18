@@ -9,7 +9,7 @@
 #      . /etc/bashrc   # --> Read /etc/bashrc, if present.
 #fi
 
-#export PATH="$HOME/bin:$PATH"
+export PATH=~/bin:$PATH
 
 for file in ~/.dotfiles/{shared,$OSTYPE}/*; do
 	[ -r "$file" ] && . "$file"
