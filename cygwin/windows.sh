@@ -1,5 +1,5 @@
 
-export PF=`cygpath "$PROGRAMFILES"`
+export PF="`cygpath $PROGRAMFILES`"
 
 WINMERGE="${PF}/WinMerge/WinMergeU.exe"
 EXPLORER=`cygpath -W`/explorer.exe

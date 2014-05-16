@@ -22,14 +22,14 @@
 # 32  42  green     36  46  cyan
 # 33  43  yellow    37  47  white
 
-if [[ ! "${prompt_colors[@]}" ]]; then
+if [[ "${prompt_colors[@]}" == "" ]]; then
   prompt_colors=(
     "36" # information color
     "37" # bracket color
     "31" # error color
   )
 
-  if [[ "$SSH_TTY" ]]; then
+  if [[ "$SSH_TTY" != "" ]]; then
     # connected via ssh
     prompt_colors[0]="32"
   elif [[ "$USER" == "root" ]]; then
@@ -54,8 +54,8 @@ function prompt_git() {
   status="$(git status 2>/dev/null)"
   [[ $? != 0 ]] && return;
   output="$(echo "$status" | awk '/# Initial commit/ {print "(init)"}')"
-  [[ "$output" ]] || output="$(echo "$status" | awk '/# On branch/ {print $4}')"
-  [[ "$output" ]] || output="$(git branch | perl -ne '/^\* (.*)/ && print $1')"
+  [[ "$output" != "" ]] || output="$(echo "$status" | awk '/# On branch/ {print $4}')"
+  [[ "$output" != "" ]] || output="$(git branch | perl -ne '/^\* (.*)/ && print $1')"
   flags="$(
     echo "$status" | awk 'BEGIN {r=""} \
       /^# Changes to be committed:$/        {r=r "+"}\
@@ -63,7 +63,7 @@ function prompt_git() {
       /^# Untracked files:$/                {r=r "?"}\
       END {print r}'
   )"
-  if [[ "$flags" ]]; then
+  if [[ "$flags" != "" ]]; then
     output="$output$c1:$c0$flags"
   fi
   echo "$c1[$c0$output$c1]$c9"
@@ -74,7 +74,7 @@ function prompt_svn() {
   prompt_getcolors
   local info="$(svn info . 2> /dev/null)"
   local last current
-  if [[ "$info" ]]; then
+  if [[ "$info" != "" ]]; then
     last="$(echo "$info" | awk '/Last Changed Rev:/ {print $4}')"
     current="$(echo "$info" | awk '/Revision:/ {print $2}')"
     echo "$c1[$c0$last$c1:$c0$current$c1]$c9"
@@ -93,10 +93,10 @@ function prompt_command() {
   prompt_stack=()
 
   # Manually load z here, after $? is checked, to keep $? from being clobbered.
-  [[ "$(type -t _z)" ]] && _z --add "$(pwd -P 2>/dev/null)" 2>/dev/null
+  [[ "$(type -t _z)" != "" ]] && _z --add "$(pwd -P 2>/dev/null)" 2>/dev/null
 
   # While the simple_prompt environment var is set, disable the awesome prompt.
-  [[ "$simple_prompt" ]] && PS1='\n$ ' && return
+  [[ "$simple_prompt" != "" ]] && PS1='\n$ ' && return
 
   prompt_getcolors
   # http://twitter.com/cowboy/status/150254030654939137

@@ -5,7 +5,7 @@ function _ps() {
   options=()  # the buffer array for the parameters
   eoo=0       # end of options reached
 
-  while [[ $1 ]]
+  while [[ "$1" != "" ]]
   do
       if ! ((eoo)); then
         case "$1" in
