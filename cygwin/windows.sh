@@ -9,28 +9,33 @@ alias github='github &'
 alias winpath='cygpath -w --'
 alias open='cygstart'
 
-function winmerge { 
+function open {
+	cygstart $@
+}
+export -f open
+
+function winmerge {
 	if [ "$1" == "" ] ; then
 		cygstart "$WINMERGE"
 	else
-		cygstart "$WINMERGE" `winpath $@` 
+		cygstart "$WINMERGE" `winpath $@`
 	fi
 }
 
 alias wm=winmerge
 
-function exp { 
-  if [ "$1" == "" ] ; then 
+function exp {
+  if [ "$1" == "" ] ; then
 	cygstart "$EXPLORER" /e,`winpath .`
   else
     cygstart "$EXPLORER" /e,`winpath $@`
   fi;
 }
 
-function trash { 
+function trash {
 	mv $@ ~/.trash/
 }
 
-function scratch { 
+function scratch {
 	mv $@ ~/scratch/
 }

@@ -22,15 +22,15 @@ fresh freshshell/fresh bin/fresh --bin
 
 #fresh freshshell/fresh contrib/completion/fresh-completion.bash
 
-fresh twe4ked/dotfiles bin/gh --bin
-fresh twe4ked/dotfiles bin/add-keys --bin
+fresh twe4ked/dotfiles bin/ghu --bin
+#fresh twe4ked/dotfiles bin/add-keys --bin
 
-fresh defunkt/repl bin/repl --bin
+#fresh defunkt/repl bin/repl --bin
 
-fresh liquidpromptrc --file=~/.liquidpromptrc
-fresh nojhan/liquidprompt liquidprompt
+#fresh liquidpromptrc --file=~/.liquidpromptrc
+#fresh nojhan/liquidprompt liquidprompt
 
-fresh revans/bash-it lib/\*
-fresh revans/bash-it plugins/available/ssh.plugin.bash
-fresh revans/bash-it completion/available/git.completion.bash
-fresh revans/bash-it completion/available/ssh.completion.bash
+#fresh revans/bash-it lib/\*
+#fresh revans/bash-it plugins/available/ssh.plugin.bash
+#fresh revans/bash-it completion/available/git.completion.bash
+#fresh revans/bash-it completion/available/ssh.completion.bash

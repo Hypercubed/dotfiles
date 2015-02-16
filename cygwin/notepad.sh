@@ -1,5 +1,5 @@
 export SUBL="/cygdrive/c/Program Files/Sublime Text 3/sublime_text.exe"
-export ATOM="/cygdrive/c/Program Files/Atom/atom.exe"
+export ATOM="/cygdrive/c/ProgramData/chocolatey/bin/atom.exe"
 #export MDP=`cygpath "${PROGRAMFILES}\MarkdownPad 2\MarkdownPad2.exe"`
 export VISUAL="subl"
 export EDITOR="vim"
@@ -16,9 +16,9 @@ function subl() {
 
 function atom() {
 	if [[ "$1" == "" ]] ; then
-		cygstart "$ATOM"
+		"$ATOM"
 	else
-		cygstart "$ATOM" `cygpath -w -- $@`
+		"$ATOM" `cygpath -w -- $@`
 	fi
 }
 
