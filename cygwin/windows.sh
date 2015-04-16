@@ -24,14 +24,6 @@ function winmerge {
 
 alias wm=winmerge
 
-function exp {
-  if [ "$1" == "" ] ; then
-	cygstart "$EXPLORER" /e,`winpath .`
-  else
-    cygstart "$EXPLORER" /e,`winpath $@`
-  fi;
-}
-
 function trash {
 	mv $@ ~/.trash/
 }

@@ -1,15 +1,11 @@
 # If not running interactively, don't do anything
-#[ -z "$PS1" ] && return
+#[[ "$-" != *i* ]] && return
+
+[[ -z ${USER_BASHRC} ]] && USER_BASHRC="1" || return
 
 #-------------------------------------------------------------
 # Source global definitions (if any)
 #-------------------------------------------------------------
-
-export CYGWIN="nodosfilewarning"
-
-#if [ -f /etc/bashrc ]; then
-#      . /etc/bashrc   # --> Read /etc/bashrc, if present.
-#fi
 
 export PATH=~/bin:$PATH
 
@@ -26,3 +22,5 @@ if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
+
+[[ $(($RANDOM % 2)) == 0 ]] && echo "Hello" || echo "Welcome"
