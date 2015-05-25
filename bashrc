@@ -9,6 +9,8 @@
 
 export PATH=~/bin:$PATH
 
+if [ ! -n "$BASH" ] ;then echo Please run this script $0 with bash; exit 1; fi
+
 for file in ~/.dotfiles/{shared,$OSTYPE}/*.{sh,bash}; do
 	[ -r "$file" ] && . "$file"
 done
