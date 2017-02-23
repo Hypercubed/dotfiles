@@ -5,9 +5,9 @@ login_date=`date`;
 #login_users=`users`;
 #login_uptime=`uptime`;
 #server_ip=`ifconfig | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'`;
-disk_available=$(df -h -k | awk '{sum += $4;} END {print sum;}');
-disk_used=$(df -h -k | awk '{sum += $3;} END {print sum;}');
-disk_size=$(df -h -k | awk '{sum += $2;} END {print sum;}');
+disk_available=$(df -h -k 2> /dev/null | awk '{sum += $4;} END {print sum;}');
+disk_used=$(df -h -k 2> /dev/null | awk '{sum += $3;} END {print sum;}');
+disk_size=$(df -h -k 2> /dev/null | awk '{sum += $2;} END {print sum;}');
 disk_available_mb=$(echo "scale=2; $disk_available/(1024^2)" | bc)
 disk_used_mb=$(echo "scale=2; $disk_used/(1024^2)" | bc)
 disk_size_mb=$(echo "scale=2; $disk_size/(1024^2)" | bc)
