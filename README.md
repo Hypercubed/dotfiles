@@ -20,7 +20,7 @@ Install using bootstrap:
 ``` sh
 cd ~
 git clone https://github.com/Hypercubed/dotfiles.git .dotfiles
-. ~/.dotfiles/bootstrap.sh
+bash ./.dotfiles//init/symlink-dotfiles.sh
 ```
 
 And you shall see 海!

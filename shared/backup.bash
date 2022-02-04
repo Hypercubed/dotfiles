@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Back up the given files and directories using an incremental backup
 # that looks like a full backup, like Time Machine does.
 backup () {(

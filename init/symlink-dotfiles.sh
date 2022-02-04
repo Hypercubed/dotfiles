@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function doIt() {
 	ln -sf ~/.dotfiles/bashrc ~/.bash_profile
@@ -6,6 +6,8 @@ function doIt() {
 	ln -sf ~/.dotfiles/freshrc ~/.freshrc
 	ln -sf ~/.dotfiles/liquidpromtrc ~/.liquidpromtrc
 	ln -sf ~/.dotfiles/vimrc ~/.vimrc
+	ln -sf ~/.dotfiles/zprofile ~/.zprofile
+	touch .localrc
 }
 
 echo 'Symlinking dotfiles...'

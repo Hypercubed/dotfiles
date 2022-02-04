@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 #
 # Clean and minimalistic Bash prompt
 # Author: Artem Sapegin, sapegin.me
