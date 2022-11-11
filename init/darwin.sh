@@ -15,6 +15,7 @@ fi
 # Install utilities
 brew install trash
 brew install wget
+brew install gh
 
 which -s nvm
 if [[ $? != 0 ]]; then
