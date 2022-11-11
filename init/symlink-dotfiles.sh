@@ -7,7 +7,7 @@ function doIt() {
 	ln -sf ~/.dotfiles/liquidpromtrc ~/.liquidpromtrc
 	ln -sf ~/.dotfiles/vimrc ~/.vimrc
 	ln -sf ~/.dotfiles/zprofile ~/.zprofile
-	touch .localrc
+	touch ~/.localrc
 }
 
 echo 'Symlinking dotfiles...'

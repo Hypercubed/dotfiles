@@ -4,7 +4,11 @@
 
 export PATH=~/bin:$PATH
 
-for file in ~/.dotfiles/{shared,$OSTYPE}/*.sh; do
+setopt +o nomatch
+
+unamestr=$(uname)
+
+for file in ~/.dotfiles/{shared,$unamestr,$OSTYPE}/*.sh; do
 	[ -r "$file" ] && . "$file"
 done
 
@@ -19,3 +23,4 @@ then
 fi
 
 [[ $(($RANDOM % 2)) == 0 ]] && echo "Hello" || echo "Welcome"
+

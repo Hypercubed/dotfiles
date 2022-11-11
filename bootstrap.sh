@@ -2,7 +2,11 @@
 cd ~/.dotfiles/
 git pull
 
-for file in ~/.dotfiles/init/{symlink-dotfiles,$OSTYPE}.sh; do
+setopt +o nomatch
+
+unamestr=$(uname)
+
+for file in ~/.dotfiles/init/{symlink-dotfiles,$unamestr,$OSTYPE}.sh; do
 	[ -r "$file" ] && . "$file"
 done
 
