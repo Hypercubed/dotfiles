@@ -16,6 +16,7 @@ fi
 brew install trash
 brew install wget
 brew install gh
+brew install git-recent
 
 which -s nvm
 if [[ $? != 0 ]]; then

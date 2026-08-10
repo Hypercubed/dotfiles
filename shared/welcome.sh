@@ -1,7 +1,14 @@
+#!/bin/bash
 # Custom Log in screen
 
-login_pwd=`pwd`;
-login_date=`date`;
+welcome_state_file="${HOME}/.dotfiles/shared/.welcome_last_run"
+welcome_today=$(date +%F)
+
+if [ "$(cat "$welcome_state_file" 2> /dev/null)" != "$welcome_today" ]; then
+echo "$welcome_today" > "$welcome_state_file"
+
+login_pwd=$(pwd);
+login_date=$(date);
 #login_users=`users`;
 #login_uptime=`uptime`;
 #server_ip=`ifconfig | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'`;
@@ -26,7 +33,7 @@ echo -e "${open_blue_escape}| ${open_green_escape}::~~:~~~~~~==~=~:~:~~.,,,,,,,,
 echo -e "${open_blue_escape}| ${open_green_escape}:,=~:~~~~~===~=~~~:=~,,,,,,,,,,,:~7777777I7777  77I,......................,~~=~~~~~================="
 echo -e "${open_blue_escape}| ${open_green_escape},:=~:~=~~~===:=~~::~~,,,,,,:::+:,,,:::=I~:::77777,,.........................~=~~~~=================="
 echo -e "${open_blue_escape}| ${open_green_escape},~=~:~~~~~===~=~~~~~~:,,,,77==77:,,,I7+77~:::=7:,,...........................:~~~~================+="
-echo -e "${open_blue_escape}| ${open_green_escape},~=~:~~~~~===:=~~=~~=~,,,7777777+::::I777?:::~,,,.............................::~~=+================"
+echo -e "${open_blue_escape}| ${open_green_escape},~=~:~~~~~===~=~~=~~=~,,,7777777+::::I777?:::~,,,.............................::~~=+================"
 echo -e "${open_blue_escape}| ${open_green_escape},~=~:~~~~~===~=~~=~:~~,,,I77 77+7I:::,:7777=7,,,..,....,:......................:~~=+================"
 echo -e "${open_blue_escape}| ${open_green_escape},==~:~~~~~=====~~=~:~~=,,7 7  7I7~::,,,+7777,.,,..,,..,~,.......................~~++================"
 echo -e "${open_blue_escape}| ${open_green_escape},==~:~~~~~=====~~~~~=~7:=777  77+:~~7I+I777,,,,,..,,.,,~~:..,.....,..............==================="
@@ -77,3 +84,5 @@ echo -e "${open_blue_escape}| ${open_green_escape}Total Free Space: ${open_red_e
 echo -e "${open_blue_escape}| ${open_green_escape}Total Used Space: ${open_red_escape}${disk_used_mb} GB"
 echo -e "${open_blue_escape}+----------------------------------------------------------------------"
 echo -e "${close_escape}"
+
+fi
