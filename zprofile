@@ -22,5 +22,3 @@ then
   source ~/.localrc
 fi
 
-[[ $(($RANDOM % 2)) == 0 ]] && echo "Hello" || echo "Welcome"
-

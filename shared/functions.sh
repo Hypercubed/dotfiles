@@ -80,7 +80,7 @@ function mkd() {
 # Escape UTF-8 characters into their 3-byte format
 function escape() {
 	printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u)
-	# print a newline unless we’re piping the output to another program
+	# print a newline unless weï¿½re piping the output to another program
 	if [ -t 1 ]; then
 		echo # newline
 	fi
@@ -89,7 +89,7 @@ function escape() {
 # Decode \x{ABCD}-style Unicode escape sequences
 function unidecode() {
 	perl -e "binmode(STDOUT, ':utf8'); print \"$@\""
-	# print a newline unless we’re piping the output to another program
+	# print a newline unless weï¿½re piping the output to another program
 	if [ -t 1 ]; then
 		echo # newline
 	fi
@@ -128,3 +128,16 @@ function center {
 	echo "$str";
 }
 
+function until_success() {
+	"$@"
+	while [ $? -ne 0 ]; do
+		"$@"
+	done
+}
+
+function until_failure() {
+	"$@"
+	while [ $? -eq 0 ]; do
+		"$@"
+	done
+}
