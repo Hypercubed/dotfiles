@@ -1,0 +1,7 @@
+# Reserved for future Linux-only dotfiles.
+#
+# The linux-gnu/ snippet directory at the repo root is still sourced via the
+# .bashrc loop (and zprofile loop) and is NOT stowed. This package exists so
+# that `stow linux` is a valid target once Linux-specific dotfiles (files that
+# should be symlinked into $HOME) are added. Until then it contains only this
+# placeholder.

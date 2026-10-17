@@ -12,11 +12,6 @@ for file in ~/.dotfiles/{shared,$unamestr,$OSTYPE}/*.sh; do
 	[ -r "$file" ] && . "$file"
 done
 
-if [ -e ~/.fresh/build/shell.sh ]
-then
-	. ~/.fresh/build/shell.sh
-fi
-
 if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
